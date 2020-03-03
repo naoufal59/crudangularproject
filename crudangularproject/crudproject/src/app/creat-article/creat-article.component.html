@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+    <div class="col-md-12">
+		<div class="form_main">
+                <h4 class="heading"><strong>Add </strong> new Article <span></span></h4>
+                <div class="form">
+                <form #f="ngForm" (ngSubmit)="onSaveArticle()" id="contactFrm"  >
+                    <input type="text" required="" placeholder="Please input name of articles" value="" [(ngModel)]="article.name"  name="name" class="txt">
+                    <input type="text" required="" placeholder="Please input your mobile No" value=""   [(ngModel)]="article.tlf" name="tlf" class="txt">
+                    <input type="text" required="" placeholder="Please input your Email" value="" [(ngModel)]="article.mail" name="mail" class="txt">
+                    <select class="txt"   name="idCategorie"  [(ngModel)]="article.idCategorie"  (ngModelChange)="onSelectedItem($event)">
+                        
+                        <option *ngFor="let summary of categories?._embedded.categories" value="{{summary.idCategorie}}"  >
+                          {{summary.tagDescription}}   
+                        </option>
+                      </select>
+
+                 
+                	 <textarea placeholder="Your description" name="description" type="text"  [(ngModel)]="article.description" class="txt_3"></textarea>
+                     <input type="submit" value="add" name="submit" class="txt2">
+                </form>
+            </div>
+            </div>
+        </div>
+        <div [hidden]="!submitted">
+            <h4>You submitted successfully!</h4>
+          </div>
+</div>
+</div>
+ 

@@ -1,0 +1,23 @@
+ 
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Email</th>
+            <th>mobile</th>
+            <th>category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles?._embedded.articles ">
+            <td>{{article.name}}</td>
+            <td>{{article.description}}</td>
+            <td>{{article.mail}}</td>
+            <td>{{article.tlf}}   </td>
+         
+          <td>{{article._links.category.tagDescription}}   </td> 
+          </tr>
+        </tbody>
+      </table>
+   
